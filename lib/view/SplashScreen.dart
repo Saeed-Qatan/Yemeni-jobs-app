@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yemeni_jops/core/navigations/navigations.dart';
-import 'package:yemeni_jops/view/LoginScreen.dart';
+import 'package:yemeni_jops/view/login_page.dart';
 
 
 class SplashScreen extends StatefulWidget {

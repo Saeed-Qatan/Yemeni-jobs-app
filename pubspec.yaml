@@ -42,7 +42,11 @@ dependencies:
 <<<<<<< HEAD
   
 =======
+<<<<<<< HEAD
 >>>>>>> 43fdbd3a494e49fd9f47be5c60405ca06994b294
+=======
+>>>>>>> main
+>>>>>>> 737ebcf40239b4d15fab8f0e6e2359b1dafb852d
 
 dev_dependencies:
   flutter_test:

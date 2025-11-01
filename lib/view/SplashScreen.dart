@@ -17,7 +17,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
     
     Future.delayed(const Duration(seconds: 3), () {
-      AppNavigation.pushAndRemove(context,  Login());
+
+      AppNavigation.pushAndRemove(context,  LoginPage());
+
+    
     });
   }
 

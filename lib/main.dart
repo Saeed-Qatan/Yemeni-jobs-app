@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:yemeni_jops/view/SplashScreen.dart';
+import 'package:yemeni_jops/view/login_page.dart';
 
-void main() {
   void main() {
     runApp(Directionality(textDirection: TextDirection.rtl, child: MyApp()));
   }
-}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

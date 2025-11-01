@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:yemeni_jops/view/SplashScreen.dart';
 
 void main() {
-  runApp(const MyApp());
+  void main() {
+    runApp(Directionality(textDirection: TextDirection.rtl, child: MyApp()));
+  }
 }
 
 class MyApp extends StatelessWidget {

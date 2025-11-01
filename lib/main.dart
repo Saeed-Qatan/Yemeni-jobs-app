@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Yemeni Job Search',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Cairo'),
-      home: const LoginPage(),
+      home: const SplashScreen(),
     );
   }
 }

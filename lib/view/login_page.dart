@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -18,10 +19,17 @@ class _LoginState extends State<Login> {
   TextEditingController email_controller = TextEditingController();
   TextEditingController password_controller = TextEditingController();
   bool rememberMe = false;
+=======
+import 'package:flutter/material.dart';
+
+class Loginscreen extends StatelessWidget {
+  const Loginscreen({super.key});
+>>>>>>> main
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: Color(0xffF6F9FF),
 
       body: Center(
@@ -241,3 +249,12 @@ class _LoginState extends State<Login> {
     );
   }
 }
+=======
+      appBar: AppBar(
+        title: const Text('Login Screen'),
+        backgroundColor: Colors.red,
+      ),
+    );
+  }
+}
+>>>>>>> main

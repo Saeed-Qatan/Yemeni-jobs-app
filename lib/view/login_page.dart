@@ -1,35 +1,26 @@
-<<<<<<< HEAD
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-
+import 'package:yemeni_jops/view/forget_page.dart';
 import 'package:yemeni_jops/components/custom_button.dart';
 import 'package:yemeni_jops/components/custom_textfield.dart';
-import 'package:yemeni_jops/view/forget_page.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:yemeni_jops/core/navigations/navigations.dart';
 
-class Login extends StatefulWidget {
-  Login({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginPageState extends State<LoginPage> {
   TextEditingController email_controller = TextEditingController();
   TextEditingController password_controller = TextEditingController();
   bool rememberMe = false;
-=======
-import 'package:flutter/material.dart';
-
-class Loginscreen extends StatelessWidget {
-  const Loginscreen({super.key});
->>>>>>> main
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
       backgroundColor: Color(0xffF6F9FF),
 
       body: Center(
@@ -249,12 +240,3 @@ class Loginscreen extends StatelessWidget {
     );
   }
 }
-=======
-      appBar: AppBar(
-        title: const Text('Login Screen'),
-        backgroundColor: Colors.red,
-      ),
-    );
-  }
-}
->>>>>>> main

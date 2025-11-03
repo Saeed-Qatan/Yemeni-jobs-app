@@ -1,10 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:yemeni_jops/core/constants/color_constants.dart';
 import 'package:yemeni_jops/view/forget_page.dart';
 import 'package:yemeni_jops/components/custom_button.dart';
 import 'package:yemeni_jops/components/custom_textfield.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:yemeni_jops/core/navigations/navigations.dart';
+import 'package:yemeni_jops/view/setting_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -18,10 +20,14 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController password_controller = TextEditingController();
   bool rememberMe = false;
 
+  ThemeData get theme => Theme.of(context);
+
+  late final textTheme = theme.textTheme;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF6F9FF),
+      backgroundColor: Theme.of(context).colorScheme.background,
 
       body: Center(
         child: SingleChildScrollView(
@@ -30,11 +36,11 @@ class _LoginPageState extends State<LoginPage> {
             height: MediaQuery.of(context).size.height * 0.9,
             width: MediaQuery.of(context).size.width * 0.9,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.secondary,
               borderRadius: BorderRadius.circular(30),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.1),
+                  color: Theme.of(context).colorScheme.shadow,
                   spreadRadius: 5,
                   blurRadius: 7,
                   offset: const Offset(0, 3),
@@ -47,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 90,
                   width: 90,
                   decoration: BoxDecoration(
-                    color: const Color(0xff1F59DF),
+                    color: Theme.of(context).colorScheme.primary,
                     borderRadius: BorderRadius.circular(25),
                     boxShadow: [
                       BoxShadow(
@@ -68,12 +74,20 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 5),
                 Text(
                   "مرحبا بعودتك",
-                  style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                    color: TextTheme.of(context).bodyLarge!.color,
+                  ),
                 ),
                 SizedBox(height: 5),
                 Text(
                   "سجل دخولك  للوصول الى حسابك",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
+                    color: TextTheme.of(context).bodyMedium!.color,
+                  ),
                 ),
                 SizedBox(height: 30),
                 MyTextFiled(
@@ -98,11 +112,14 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text("تذكرني"),
+                    Text(
+                      "تذكرني",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
 
                     Checkbox(
-                      activeColor: Colors.blueAccent,
-                      checkColor: Colors.white,
+                      activeColor: Theme.of(context).colorScheme.primary,
+                      checkColor: Theme.of(context).colorScheme.secondary,
                       splashRadius: 4,
 
                       side: BorderSide(
@@ -127,19 +144,14 @@ class _LoginPageState extends State<LoginPage> {
                           TextSpan(
                             text: 'هل نسيت كلمة المرور؟ ',
                             style: TextStyle(
-                              color: Color(0xff1F59DF),
+                              color: Theme.of(context).colorScheme.primary,
 
                               fontWeight: FontWeight.bold,
                             ),
                             recognizer:
                                 TapGestureRecognizer()
                                   ..onTap = () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => ForgetPage(),
-                                      ),
-                                    );
+                                    AppNavigation.push(context, ForgetPage());
                                   },
                           ),
                         ],
@@ -151,8 +163,8 @@ class _LoginPageState extends State<LoginPage> {
                 CustomButton(
                   text: 'تسجيل الدخول',
                   icon: Icon(Icons.login_rounded),
-                  color: Color(0xff1F59DF),
-                  textColor: Colors.white,
+                  color: Theme.of(context).colorScheme.primary,
+                  textColor: ColorConstants.lightTextSecondary,
                   onPressed: () {},
                 ),
 
@@ -199,7 +211,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 CustomButton(
                   text: 'تسجيل الدخول بفيسبوك ',
-                  icon: Icon(FontAwesomeIcons.facebook, color: Colors.blue),
+                  icon: Icon(
+                    FontAwesomeIcons.facebook,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                   color: Colors.white,
                   textColor: Colors.black,
                   onPressed: () {},
@@ -209,19 +224,19 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       TextSpan(
                         text: 'ليس لديك حساب؟ ',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: theme.textTheme.bodySmall?.color),
                       ),
                       TextSpan(text: "  "),
                       TextSpan(
                         text: "إنشاء حساب جديد",
                         style: TextStyle(
-                          color: Color(0xff1F59DF),
+                          color: Theme.of(context).colorScheme.primary,
                           fontWeight: FontWeight.bold,
                         ),
                         recognizer:
                             TapGestureRecognizer()
                               ..onTap = () {
-                                AppNavigation.push(context, ForgetPage());
+                                AppNavigation.push(context, SettingPage());
                               },
                       ),
                     ],

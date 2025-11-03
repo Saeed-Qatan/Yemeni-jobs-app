@@ -1,4 +1,3 @@
- 
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -6,51 +5,51 @@ class CustomButton extends StatelessWidget {
   final Icon icon;
   final Color color;
   final Color textColor;
-  final void Function()? onPressed;
-  CustomButton({
-    Key? key,
+  final VoidCallback? onPressed;
+
+  const CustomButton({
+    super.key,
     required this.text,
     required this.icon,
     required this.color,
     required this.textColor,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsetsGeometry.all(20),
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
 
-      child: (ElevatedButton(
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          fixedSize: const Size.fromHeight(50),
+          elevation: 5,
+          backgroundColor: color,
+          foregroundColor: textColor,
+          shadowColor: colorScheme.shadow,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-
           children: [
             Text(
               text,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style: textTheme.bodyLarge?.copyWith(
+                color: textColor,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            SizedBox(width: 5),
+            const SizedBox(width: 8),
             icon,
           ],
         ),
-
-        style: ElevatedButton.styleFrom(
-          fixedSize: const Size.fromHeight(50),
-          elevation: 10,
-          shadowColor: Colors.grey,
-          backgroundColor: color,
-          foregroundColor: textColor,
-          iconSize: 20,
-
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
-
-        onPressed: onPressed,
-      )),
+      ),
     );
   }
 }

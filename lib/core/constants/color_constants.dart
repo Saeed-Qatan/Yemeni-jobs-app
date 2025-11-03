@@ -2,23 +2,39 @@ import 'package:flutter/material.dart';
 
 class ColorConstants {
   // الألوان الأساسية للتطبيق
-  static const Color primary = Color(0xFF0A73FF);
-  static const Color secondary = Color(0xFFFFA500);
 
-  // ألوان الخلفيات
-  static const Color background = Color(0xFFF5F5F5);
-  static const Color scaffoldBackground = Colors.white;
+  // Light Mode
+  static const Color lightPrimary = Color(0xff1F59DF);
+  static const Color lightSecondary = Colors.white;
+  static const Color lightSurface = Color(0xffFAFAFD);
+  static const Color lightOnSurface = Colors.grey;
+  static const Color lightBackground = Color(0xffF6F9FF);
+  static const Color lightScaffoldBackground = Colors.white;
 
-  // ألوان النصوص
-  static const Color textPrimary = Color(0xFF212121);
-  static const Color textSecondary = Color(0xFF757575);
+  static const Color lightTextPrimary = Color(0xFF212121);
+  static const Color lightTextSecondary = Colors.white;
 
-  // ألوان الحالة
+  static const Color lightBorder = Color(0xFFE0E0E0);
+  static const Color lightShadow =  Colors.grey; // 16% opacity black
+
+  // Dark Mode
+  static const Color darkPrimary = Color(0xFF4D7DFF);
+  static const Color darkSecondary = Color(0xFF7A6A);
+
+  static const Color darkBackground = Color(0xFF0A0F1E);
+  static const Color darkScaffoldBackground = Color(0xFF0A0F1E);
+
+  static const Color darkSurface = Color(0xFF1E1E2C);
+  static const Color darkOnSurface = Color(0xff727F94);
+
+  static const Color darkTextPrimary = Color(0xFFFFFFFF);
+  static const Color darkTextSecondary = Color(0xFF9CA3AF);
+
+  static const Color darkBorder = Color(0xFF1F2937);
+  static const Color darkShadow = Color(0x66000000);
+
+  // Common Colors
   static const Color success = Color(0xFF4CAF50);
   static const Color error = Color(0xFFF44336);
   static const Color warning = Color(0xFFFFC107);
-
-  // ألوان إضافية
-  static const Color border = Color(0xFFE0E0E0);
-  static const Color shadow = Color(0x29000000); // شفافية 16%
 }
